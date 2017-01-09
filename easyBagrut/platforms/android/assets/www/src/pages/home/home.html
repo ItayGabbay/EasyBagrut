@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            הבגרות שלי
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            חישוב ממוצע הבגרות
+        </ion-list-header>
+        <ion-item padding *ngFor="let d of data">
+            <ion-icon color="primary" item-right [name]="d.icon" (click)="toggleDetails(d)">{{d.title}}   {{d.avgGrade}}</ion-icon>
+            <div *ngIf="d.showDetails">
+                <ion-item>
+                    <ion-range [min]="d.details.minUnits" [max]="d.details.maxUnits" [(ngModel)]="d.details.chosenUnits" step="1" snaps="true" (ionChange)="onUnitsChange(d)">
+                        <ion-label range-right>{{d.details.minUnits}}</ion-label>
+                        <ion-label range-left>{{d.details.maxUnits}}</ion-label>
+                    </ion-range>
+                </ion-item>     
+                <ion-list>
+                    <ion-item *ngFor="let test of d.details.selectedTests">
+                        <ion-label color="primary">{{test.testName}}</ion-label>
+                        <ion-input type="number" [placeholder]="(test.weight * 100) + '%'" [(ngModel)]="test.grade" min="0" max="100" (blur)="onTestBlur(d)"></ion-input>
+                    </ion-item>
+                </ion-list>  
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
