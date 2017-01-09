@@ -30,7 +30,7 @@ export class GradesPage {
                 chosenUnits: 3,
                 selectedTests: this.tests["אנגלית_3"]
             },
-            icon: 'add-circle',
+            icon: 'arrow-dropdown-circle',
             showDetails: false
         });
         this.data.push({
@@ -41,7 +41,62 @@ export class GradesPage {
                 chosenUnits: 3,
                 selectedTests: this.tests["מתמטיקה_3"]
             },
-            icon: 'add-circle',
+            icon: 'arrow-dropdown-circle',
+            showDetails: false
+        });
+        this.data.push({
+            title: 'לשון',
+            details: {
+                minUnits: 2,
+                maxUnits: 2,
+                chosenUnits: 2,
+                selectedTests: this.tests["לשון_2"]
+            },
+            icon: 'arrow-dropdown-circle',
+            showDetails: false
+        });
+        this.data.push({
+            title: 'היסטוריה',
+            details: {
+                minUnits: 2,
+                maxUnits: 2,
+                chosenUnits: 2,
+                selectedTests: this.tests["היסטוריה_2"]
+            },
+            icon: 'arrow-dropdown-circle',
+            showDetails: false
+        });
+        this.data.push({
+            title: 'ספרות',
+            details: {
+                minUnits: 2,
+                maxUnits: 2,
+                chosenUnits: 2,
+                selectedTests: this.tests["ספרות_2"]
+            },
+            icon: 'arrow-dropdown-circle',
+            showDetails: false
+        });
+        this.data.push({
+            title: 'אזרחות',
+            details: {
+                minUnits: 2,
+                maxUnits: 2,
+                chosenUnits: 2,
+                selectedTests: this.tests["אזרחות_2"]
+            },
+            icon: 'arrow-dropdown-circle',
+            showDetails: false
+        });
+        this.data.push({
+            title: 'תנ"ך',
+            details: {
+                minUnits: 2,
+                maxUnits: 2,
+                chosenUnits: 2,
+                selectedTests: this.tests["תנך_2"]
+            },
+            icon: 'arrow-dropdown-circle',
             showDetails: false
         });
     }
@@ -49,10 +104,10 @@ export class GradesPage {
     toggleDetails(data) {
         if (data.showDetails) {
             data.showDetails = false;
-            data.icon = 'add-circle';
+            data.icon = 'arrow-dropdown-circle';
         } else {
             data.showDetails = true;
-            data.icon = 'remove-circle';
+            data.icon = 'arrow-dropup-circle';
         }
     }
 
@@ -86,6 +141,11 @@ export class GradesPage {
             "מתמטיקה_3": [{ testName: "801", weight: 0.33 }, { testName: "802", weight: 0.33 }, { testName: "803", weight: 0.34 }],
             "מתמטיקה_4": [{ testName: "804", weight: 0.6 }, { testName: "805", weight: 0.4 }],
             "מתמטיקה_5": [{ testName: "806", weight: 0.6 }, { testName: "807", weight: 0.4 }],
+            "לשון_2": [{ testName: "עברית א", weight: 0.4 }, { testName: "עברית ב", weight: 0.6 }],
+            "היסטוריה_2": [{ testName: "היסטוריה א", weight: 0.4 }, { testName: "היסטוריה ב", weight: 0.6 }],
+            "ספרות_2": [{ testName: "ספרות", weight: 1 }],
+            "תנך_2": [{ testName: 'תנ"ך', weight: 1 }],
+            "אזרחות_2": [{ testName: "שאלון", weight: 0.8 }, { testName: "עבודה", weight: 0.2 }],
         }
     }
   
